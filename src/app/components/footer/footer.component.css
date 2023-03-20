@@ -23,17 +23,20 @@ button{
 }
 
 button.active {
-    background-color: var(--color--green);
+    background-color: var(--green);
 }
 
 button + button.active  {
-    background-color: var(--color--yellow);
+    background-color: var(--yellow);
 }
 
 button button + button.active {
-    background-color: var(--color--pink);
+    background-color: var(--pink);
 }
 
+img {
+    background-color: var(--bg2);
+}
 
 
 

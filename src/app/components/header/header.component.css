@@ -1,0 +1,9 @@
+header{
+    border-bottom: 1px solid white;
+}
+
+h1{
+    margin: 35px 25px 10px;
+    text-transform: uppercase;
+    color: white;
+}
