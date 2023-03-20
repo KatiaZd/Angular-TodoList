@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --bg : #040722;
+    --bg2 : #1D2038;
+    --green: #88E7A1;
+    --yellow: #F3D24F;
+    --pink: #E475F1;
+}
+
+* {
+    background-color: var(--bg);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            
+}
