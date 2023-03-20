@@ -1,13 +1,13 @@
 <footer>
     <nav>
         <div class="navBar">
-            <button routerLink="" type="menu" [ngClass]="{'active': addTasks}">
+            <button routerLink="/listTasks" type="menu" [ngClass]="{'active': listTasks }">
                 <img src="assets/icons/list.png" alt="Liste des tâches">
             </button>
-            <button routerLink="/tasks" type="menu" [ngClass]="{'active': historicalTasks}">
+            <button routerLink="" type="menu" [ngClass]="{'active': addTasks }">
                 <img src="assets/icons/plus.png" alt="Ajout des tâches">
             </button>
-            <button routerLink="/historical" type="menu" [ngClass]="{'active': listTasks}">
+            <button routerLink="/historical" type="menu" [ngClass]="{'active': historicalTasks}">
                 <img src="assets/icons/historical.png" alt="Historique des tâches">
             </button>
         </div>

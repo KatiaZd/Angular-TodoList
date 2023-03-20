@@ -9,6 +9,7 @@ import { ListTasksComponent } from './pages/list-tasks/list-tasks.component';
 import { AddTasksComponent } from './pages/add-tasks/add-tasks.component';
 import { HistoricalTasksComponent } from './pages/historical-tasks/historical-tasks.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { HistoricalTasksComponent } from './pages/historical-tasks/historical-ta
     ListTasksComponent,
     AddTasksComponent,
     HistoricalTasksComponent
+
   ],
   imports: [
     BrowserModule,

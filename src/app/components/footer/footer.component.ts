@@ -9,16 +9,17 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   constructor(private router: Router){}
 
+  get listTasks(): boolean {
+  return this.router.url === '/listTasks';
+}
  get addTasks(): boolean{
   return this.router.url === '/';
  }
 
  get historicalTasks(): boolean {
-  return this.router.url === '/tasks';
-}
-
-get listTasks(): boolean {
   return this.router.url === '/historical';
 }
+
+
 
 }

@@ -6,10 +6,9 @@ import { ListTasksComponent } from './pages/list-tasks/list-tasks.component';
 
   const routes: Routes = [
 
+    { path: 'listTasks', component: ListTasksComponent },
     { path: '', component: AddTasksComponent },
-    { path: 'about', component: HistoricalTasksComponent },
-    { path: 'contact', component: ListTasksComponent },
-    { path: '**', redirectTo: '' }
+    { path: 'historical', component: HistoricalTasksComponent },
   ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoriesType } from 'src/app/mocks/categories.mock';
 
 @Component({
   selector: 'app-add-tasks',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-tasks.component.css']
 })
 export class AddTasksComponent {
+  categories: CategoriesType[] = ["🛍️", "💊️", "💼", "💸", "🧼", "🤷‍♀️"];
 
 }

@@ -26,16 +26,16 @@ button.active {
     background-color: var(--green);
 }
 
-button + button.active  {
+button + button.active:nth-child(2)  {
     background-color: var(--yellow);
 }
 
-button button + button.active {
+button + button.active:nth-child(3) {
     background-color: var(--pink);
 }
 
 img {
-    background-color: var(--bg2);
+    background-color: transparent;
 }
 
 
