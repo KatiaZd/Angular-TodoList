@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-tasks',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-tasks.component.css']
 })
 export class ListTasksComponent {
+  constructor(private router: Router) { }
+
+  // Accédez à la page d'ajout de tâche
+  addTask() {
+    this.router.navigate(['']);
+  }
 
 }

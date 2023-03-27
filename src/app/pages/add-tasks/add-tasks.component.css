@@ -1,0 +1,127 @@
+.categorie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient:
+     vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: col;
+            flex-direction: col;
+}
+
+.buttonCategorie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; 
+    gap: 10px;
+} 
+
+button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--bg2);
+    cursor: pointer;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+    margin: 28px 0;
+}
+
+/* Textarea */
+
+textarea {
+    display: block;
+    width: 84vw;
+    background-color: var(--bg2);
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+textarea::-webkit-input-placeholder {
+    margin-top: 24px;
+    font-size: 16px;
+}
+
+/* Enlever la bordure */
+textarea:focus {
+    outline: none;
+}
+  
+
+/* Checkbox */
+
+input[type="checkbox"] {
+    display: none;
+}
+  
+label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px;
+    font-size: 16px;
+    color: white;
+    top: 28px;
+}
+  
+label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--bg2);
+    background-color: var(--bg2);
+    position: absolute;
+    left: 0;
+}
+  
+input[type="checkbox"]:checked + label::before {
+    background-color: var(--bg2);
+    border-color: var(--bg2);
+} 
+  
+label::after {
+    content: "\2713";
+    display: none;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    color: #fff;
+    font-size: 14px;
+}
+
+  
+/* Button */
+
+.buttonValidate {
+    text-align: center;
+    cursor: pointer;
+}
+
+.validate {
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    background-color: var(--blue);
+    margin-top: 142px;
+    width: 248px;
+    border-radius: 30px;
+    
+}
+  
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,23 @@
-<ul>
-    <li *ngFor="let category of categories">{{ category }}</li>
-  </ul>
-  
+<!-- Affichage des catégories -->
+<div class="catégorie">
+    <p>Sélectionnez votre catégorie : </p>
+
+    <div class="buttonCategorie">
+        <button *ngFor="let category of categories">{{ category }}</button>
+    </div>
+</div>
+
+<!-- Textarea - add task -->
+<p>Quelle tâche avez-vous à effectuer ?</p>
+    <textarea name="task" id="task" cols="30" rows="10" placeholder="Exemple : Faire les courses"></textarea>
+
+<!-- Checkbox -->
+<label for="urgent-task">
+    <input class="checkbox" type="checkbox" name="" id="urgent-task">
+    La tâche est urgente ⚠️
+</label>
+
+<div class="buttonValidate">
+    <button class="validate">Valider ma tâche</button>
+</div>
+
