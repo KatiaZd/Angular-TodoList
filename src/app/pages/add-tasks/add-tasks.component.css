@@ -26,7 +26,6 @@ button {
 }
 
 p {
-    color: white;
     font-size: 16px;
     margin: 28px 0;
 }
@@ -38,14 +37,20 @@ textarea {
     width: 84vw;
     background-color: var(--bg2);
     border: none;
-    color: white;
     font-size: 16px;
 }
 
 textarea::-webkit-input-placeholder {
     margin-top: 24px;
     font-size: 16px;
+    color: red;
 }
+
+::-webkit-input-placeholder {
+    margin-top: 24px;
+    font-size: 16px;
+}
+
 
 /* Enlever la bordure */
 textarea:focus {
@@ -64,7 +69,6 @@ label {
     cursor: pointer;
     padding-left: 25px;
     font-size: 16px;
-    color: white;
     top: 28px;
 }
   
@@ -92,7 +96,6 @@ label::after {
     position: absolute;
     top: 2px;
     left: 2px;
-    color: #fff;
     font-size: 14px;
 }
 
@@ -106,7 +109,6 @@ label::after {
 
 .validate {
     display: inline-block;
-    color: white;
     font-size: 16px;
     background-color: var(--blue);
     margin-top: 142px;

@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ListTasksComponent } from './pages/list-tasks/list-tasks.component';
 import { AddTasksComponent } from './pages/add-tasks/add-tasks.component';
 import { HistoricalTasksComponent } from './pages/historical-tasks/historical-tasks.component';
+import { CreateTaskComponent } from './components/create-task/create-task.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HistoricalTasksComponent } from './pages/historical-tasks/historical-ta
     HeaderComponent,
     ListTasksComponent,
     AddTasksComponent,
-    HistoricalTasksComponent
+    HistoricalTasksComponent,
+    CreateTaskComponent
 
   ],
   imports: [

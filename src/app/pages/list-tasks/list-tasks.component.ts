@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-tasks.component.css']
 })
 export class ListTasksComponent {
-  constructor(private router: Router) { }
 
-  // Accédez à la page d'ajout de tâche
-  addTask() {
-    this.router.navigate(['']);
-  }
+  // A SUPPRIMER
+  // constructor(private router: Router) { }
+  // // Accédez à la page d'ajout de tâche
+  // addTask() {
+  //   this.router.navigate(['']);
+  // }
 
 }

@@ -21,9 +21,3 @@ p {
     margin-bottom: 32px;
 }
 
-button {
-    cursor: pointer;
-    background-color: var(--blue);
-    border-radius: 30px;
-    padding: 14px 60px 14px 59px;
-}
