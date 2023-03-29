@@ -5,6 +5,7 @@
     --yellow: #F3D24F;
     --pink: #E475F1;
     --blue : #64A7D9;
+    color-scheme: light dark;
 }
 
 * {

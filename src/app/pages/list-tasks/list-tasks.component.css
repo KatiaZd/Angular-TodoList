@@ -1,9 +1,29 @@
-p {
-    color: white;
+* {
     font-size: 16px;
 }
 
+body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 90vh;
+      
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
 button {
-    color: white;
     cursor: pointer;
+    background-color: var(--blue);
+    border-radius: 30px;
+    padding: 14px 60px 14px 59px;
 }
