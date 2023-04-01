@@ -16,9 +16,6 @@
     gap: 10px;
 } 
 
-.active {
-    background: red;
-}
 
 button {
     width: 48px;
@@ -27,6 +24,10 @@ button {
     border: none;
     background-color: var(--bg2);
     cursor: pointer;
+}
+
+.buttonCategorie button.selected {
+    background-color: var(--yellow);
 }
 
 p {
@@ -66,6 +67,7 @@ textarea:focus {
 
 input[type="checkbox"] {
     display: none;
+    
 }
   
 label {
@@ -81,7 +83,6 @@ label::before {
     display: inline-block;
     width: 20px;
     height: 20px;
-    margin-right: 10px;
     border-radius: 50%;
     border: 2px solid var(--bg2);
     background-color: var(--bg2);
@@ -103,6 +104,13 @@ label::after {
     font-size: 14px;
 }
 
+/* Espace entre la checkbox et le text */
+.customCheckbox label {
+    display: inline-block;
+    padding-left: 33px;
+}
+  
+
   
 /* Button */
 
@@ -121,9 +129,7 @@ label::after {
     
 }
   
-  .buttonCategorie button.selected {
-    background-color: var(--yellow);
-  }
+
   
 
 
