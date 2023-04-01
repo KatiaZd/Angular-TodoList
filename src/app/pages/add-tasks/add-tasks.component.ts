@@ -8,5 +8,11 @@ import { CategoriesType } from 'src/app/mocks/categories.mock';
 })
 export class AddTasksComponent {
   categories: CategoriesType[] = ["🛍️", "💊️", "💼", "💸", "🧼", "🤷‍♀️"];
+  router: any;
+  selectedCategory: any;
 
+  // Au click, background de la catégorie sélectionnée change de couleur
+  onCategoryClick(category: any) {
+    this.selectedCategory = category;
+  }
 }

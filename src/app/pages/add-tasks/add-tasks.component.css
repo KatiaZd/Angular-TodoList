@@ -16,6 +16,10 @@
     gap: 10px;
 } 
 
+.active {
+    background: red;
+}
+
 button {
     width: 48px;
     height: 48px;
@@ -43,7 +47,7 @@ textarea {
 textarea::-webkit-input-placeholder {
     margin-top: 24px;
     font-size: 16px;
-    color: red;
+    padding: 24px 0 0 17px;
 }
 
 ::-webkit-input-placeholder {
@@ -116,6 +120,10 @@ label::after {
     border-radius: 30px;
     
 }
+  
+  .buttonCategorie button.selected {
+    background-color: var(--yellow);
+  }
   
 
 

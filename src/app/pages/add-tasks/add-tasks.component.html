@@ -3,7 +3,7 @@
     <p>Sélectionnez votre catégorie : </p>
 
     <div class="buttonCategorie">
-        <button *ngFor="let category of categories">{{ category }}</button>
+        <button *ngFor="let category of categories"  [class.selected]="category === selectedCategory" (click)="onCategoryClick(category)">{{ category }}</button>
     </div>
 </div>
 
