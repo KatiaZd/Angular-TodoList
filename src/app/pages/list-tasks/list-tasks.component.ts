@@ -8,11 +8,8 @@ import { Router } from '@angular/router';
 })
 export class ListTasksComponent {
 
-  // A SUPPRIMER
-  // constructor(private router: Router) { }
-  // // Accédez à la page d'ajout de tâche
-  // addTask() {
-  //   this.router.navigate(['']);
-  // }
+
+
+  
 
 }

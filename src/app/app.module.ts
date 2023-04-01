@@ -9,6 +9,8 @@ import { ListTasksComponent } from './pages/list-tasks/list-tasks.component';
 import { AddTasksComponent } from './pages/add-tasks/add-tasks.component';
 import { HistoricalTasksComponent } from './pages/historical-tasks/historical-tasks.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
