@@ -3,7 +3,7 @@
     <p>Sélectionnez votre catégorie : </p>
 
     <div class="buttonCategorie">
-        <button *ngFor="let category of categories"  [class.selected]="category === selectedCategory" (click)="onCategoryClick(category)">{{ category }}</button>
+        <button *ngFor="let category of categories"  [class.selected]="category === selectedCategory" (click)="onCategoryClick(category)" required>{{ category }}</button>
     </div>
 </div>
 
@@ -25,7 +25,7 @@
       </div>
 
     <div class="buttonValidate">
-        <button type="submit" class="validate">Valider ma tâche</button>
+        <button class="validate" [disabled]="!taskForm.valid || !selectedCategory">Valider ma tâche</button>
     </div>
 
 </form>
