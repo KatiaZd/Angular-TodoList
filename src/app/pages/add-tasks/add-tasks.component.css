@@ -16,7 +16,6 @@
     gap: 10px;
 } 
 
-
 button {
     width: 48px;
     height: 48px;
@@ -43,42 +42,88 @@ textarea {
     background-color: var(--bg2);
     border: none;
     font-size: 16px;
-}
-
-textarea::-webkit-input-placeholder {
-    margin-top: 24px;
-    font-size: 16px;
     padding: 24px 0 0 17px;
 }
-
-::-webkit-input-placeholder {
-    margin-top: 24px;
-    font-size: 16px;
-}
-
 
 /* Enlever la bordure */
 textarea:focus {
     outline: none;
 }
-  
 
+
+  
 /* Checkbox */
-
-input[type="checkbox"] {
+ 
+/* input[type="checkbox"] {
     display: none;
-    
-}
-  
-label {
+} */
+
+.urgent {
+    display: block;
     position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+
+
+    /* position: relative;
     cursor: pointer;
     padding-left: 25px;
     font-size: 16px;
-    top: 28px;
+    top: 28px; */
 }
+.urgent input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  .urgent input:checked ~ .checkmark {
+    background-color: red;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .urgent input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .urgent .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
   
-label::before {
+/* label::before {
     content: "";
     display: inline-block;
     width: 20px;
@@ -88,21 +133,21 @@ label::before {
     background-color: var(--bg2);
     position: absolute;
     left: 0;
-}
+} */
   
-input[type="checkbox"]:checked + label::before {
-    background-color: var(--bg2);
-    border-color: var(--bg2);
-} 
-  
-label::after {
+/* label::after {
     content: "\2713";
     display: none;
     position: absolute;
     top: 2px;
     left: 2px;
     font-size: 14px;
-}
+}  */
+
+
+
+
+
 
 /* Espace entre la checkbox et le text */
 .customCheckbox label {
@@ -126,18 +171,5 @@ label::after {
     margin-top: 142px;
     width: 248px;
     border-radius: 30px;
-    
 }
-  
-
-  
-
-
-
-
-
-
-
-
-
 

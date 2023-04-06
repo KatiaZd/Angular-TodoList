@@ -18,11 +18,12 @@
     </div>
 
     <div class="customCheckbox">
-        <label for="urgent-task">
-          <input class="checkbox" type="checkbox" name="urgent" id="urgent-task" [(ngModel)]="newTask.urgent">
-          La tâche est urgente ⚠️
+        <label class="urgent"> La tâche est urgente ⚠️
+          <input class="checkbox" checked="checked">
+          <span class="checkmark"></span>
         </label>
-      </div>
+    </div>
+    
 
     <div class="buttonValidate">
         <button class="validate" [disabled]="!taskForm.valid || !selectedCategory">Valider ma tâche</button>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoriesType } from 'src/app/mocks/categories.mock';
 
+
 interface Task {
   name: string;
   category: string;
