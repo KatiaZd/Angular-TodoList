@@ -35,7 +35,6 @@ p {
 }
 
 /* Textarea */
-
 textarea {
     display: block;
     width: 84vw;
@@ -50,114 +49,46 @@ textarea:focus {
     outline: none;
 }
 
-
   
-/* Checkbox */
- 
-/* input[type="checkbox"] {
-    display: none;
-} */
+/* CHECKBOX*/
 
-.urgent {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    
-
-
-    /* position: relative;
-    cursor: pointer;
-    padding-left: 25px;
+.customCheckbox {
+    margin-top: 28px;
     font-size: 16px;
-    top: 28px; */
-}
-.urgent input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
 }
 
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
+.checkbox{
     width: 25px;
-    background-color: #eee;
-  }
-
-  .urgent input:checked ~ .checkmark {
-    background-color: red;
-  }
-
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-
-  .urgent input:checked ~ .checkmark:after {
-    display: block;
-  }
-
-  .urgent .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-
-  
-/* label::before {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--bg2);
+    height: 25px;
     background-color: var(--bg2);
-    position: absolute;
-    left: 0;
-} */
-  
-/* label::after {
-    content: "\2713";
-    display: none;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-size: 14px;
-}  */
-
-
-
-
-
-
-/* Espace entre la checkbox et le text */
-.customCheckbox label {
-    display: inline-block;
-    padding-left: 33px;
+    border-radius: 50%;
+    vertical-align: middle;
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
+    margin-right: 11px;
+    cursor: pointer;
 }
-  
 
-  
-/* Button */
+.checkbox:checked {
+    background-color: var(--pink);
+}
+
+.checkbox:checked:after {
+    content: '✔';
+    color: white;
+    font-size: 13px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 2px;
+} 
+
+
+/* BUTTON DE VALIDATION */
 
 .buttonValidate {
     text-align: center;
@@ -172,4 +103,3 @@ textarea:focus {
     width: 248px;
     border-radius: 30px;
 }
-
