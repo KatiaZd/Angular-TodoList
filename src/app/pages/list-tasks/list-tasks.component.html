@@ -1,10 +1,10 @@
 <body>
-    <div>
+    <div *ngIf="tasks.length === 0">
         <p>Aucune tâche pour le moment 🙌</p>
         <app-create-task></app-create-task>
     </div>
 
-    <ul>
+    <ul *ngIf="tasks.length > 0">
         <li *ngFor="let task of tasks">{{ task }}</li>
       </ul>
 </body>
