@@ -17,7 +17,7 @@ export class ListTasksComponent implements OnInit  {
 
 
   constructor(private localStorageService: LocalStorageService) {
-    this.tasks = this.localStorageService.getTasks().map(name => ({ name, done: false, urgent: false, category: "" }));
+    this.tasks = this.localStorageService.getTasks().map(name => ({ name, category: "", urgent: false, done: false }));
     this.urgentTasks = this.tasks.filter(task => task.urgent);
     this.nonUrgentTasks = this.tasks.filter(task => !task.urgent);
   }
