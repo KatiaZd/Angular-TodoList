@@ -9,6 +9,8 @@ import { ListTasksComponent } from './pages/list-tasks/list-tasks.component';
     { path: 'listTasks', component: ListTasksComponent },
     { path: '', component: AddTasksComponent },
     { path: 'historical', component: HistoricalTasksComponent },
+    { path: '', redirectTo: 'addTask', pathMatch: 'full' }, // redirige l'utilisateur vers AddTasksComponent si l'URL est vide
+    { path: '**', redirectTo: 'addTask', pathMatch: 'full' } // redirige l'utilisateur vers AddTasksComponent si l'URL est invalide
   ];
 
 @NgModule({

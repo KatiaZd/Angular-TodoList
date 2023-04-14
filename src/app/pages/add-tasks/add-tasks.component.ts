@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoriesType } from 'src/app/mocks/categories.mock';
+import { LocalStorageService } from 'src/app/services/local-storage.service'; 
+
 
 
 interface Task {
@@ -15,6 +17,18 @@ interface Task {
 })
 export class AddTasksComponent {
   categories: CategoriesType[] = ["🛍️", "💊️", "💼", "💸", "🧼", "🤷‍♀️"];
+  task: string = '';
+  router: any;
+
+  constructor(private localStorageService: LocalStorageService) { }
+
+  saveTask() {
+    this.localStorageService.saveTask(this.task);
+    this.task = '';
+    this.router.navigate(['listTasks']); // naviguer vers la page list-tasks
+  }
+
+
 
   // router: any;
   selectedCategory: string = '';
@@ -36,6 +50,7 @@ export class AddTasksComponent {
       return;
     }
     this.tasks.push(this.newTask);
+    this.localStorageService.saveTask(this.newTask.name); // appel à saveTask()
     this.newTask = {
       name: '',
       category: '',

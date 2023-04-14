@@ -10,6 +10,8 @@ import { AddTasksComponent } from './pages/add-tasks/add-tasks.component';
 import { HistoricalTasksComponent } from './pages/historical-tasks/historical-tasks.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { FormsModule } from '@angular/forms';
+import { LocalStorageService } from './services/local-storage.service';
+
 
 
 
@@ -21,15 +23,19 @@ import { FormsModule } from '@angular/forms';
     ListTasksComponent,
     AddTasksComponent,
     HistoricalTasksComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [
+    LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

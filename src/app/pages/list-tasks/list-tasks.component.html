@@ -3,5 +3,9 @@
         <p>Aucune tâche pour le moment 🙌</p>
         <app-create-task></app-create-task>
     </div>
+
+    <ul>
+        <li *ngFor="let task of tasks">{{ task }}</li>
+      </ul>
 </body>
 
