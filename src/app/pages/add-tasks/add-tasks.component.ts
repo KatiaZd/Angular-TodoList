@@ -3,11 +3,11 @@ import { CategoriesType } from 'src/app/mocks/categories.mock';
 import { LocalStorageService } from 'src/app/services/local-storage.service'; 
 
 
-
-interface Task {
+export interface Task {
   name: string;
   category: string;
   urgent: boolean;
+  done: boolean;        // ajouté pour la checkbox "done" dans le template html de add-tasks 
 }
 
 @Component({
@@ -33,9 +33,11 @@ export class AddTasksComponent {
   // router: any;
   selectedCategory: string = '';
   newTask: Task = {
+ 
     name: '',
     category: '',
-    urgent: false
+    urgent: false,
+    done: false
   };
 
   tasks: Task[] = [];
@@ -52,9 +54,11 @@ export class AddTasksComponent {
     this.tasks.push(this.newTask);
     this.localStorageService.saveTask(this.newTask.name); // appel à saveTask()
     this.newTask = {
+  
       name: '',
       category: '',
-      urgent: false
+      urgent: false,
+      done: false
     };
     taskForm.resetForm();
   }
