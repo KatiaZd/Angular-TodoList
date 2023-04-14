@@ -4,10 +4,25 @@
         <app-create-task></app-create-task>
     </div>
 
-    <ul *ngIf="tasks.length > 0">
-        <li *ngFor="let task of tasks">
-            <input type="checkbox" [(ngModel)]="task.done" (change)="moveToHistoricalTasks(task)">
-            {{ task.name }}
+    <h2>⚠️ Tâche urgentes </h2>
+    <ul *ngIf="urgentTasks.length > 0">
+
+        <li *ngFor="let task of urgentTasks">
+            <ng-container *ngIf="task.urgent">
+                <input type="checkbox" [(ngModel)]="task.done" (change)="moveToHistoricalTasks(task)">
+                {{ task.name }}
+            </ng-container>
+            </li>
+    </ul>
+    
+    <h2>🌸 Tâches non urgentes</h2>
+    <ul *ngIf="nonUrgentTasks.length > 0">
+
+        <li *ngFor="let task of nonUrgentTasks">
+            <ng-container *ngIf="!task.urgent">
+                <input type="checkbox" [(ngModel)]="task.done" (change)="moveToHistoricalTasks(task)">
+                {{ task.name }}
+            </ng-container>
         </li>
     </ul>
 </body>

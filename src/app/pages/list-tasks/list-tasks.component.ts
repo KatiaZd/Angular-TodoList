@@ -12,15 +12,16 @@ import { Task } from '../add-tasks/add-tasks.component';
 export class ListTasksComponent implements OnInit  {
 
   tasks: Task[] = [];
+  urgentTasks: Task[] = [];
+  nonUrgentTasks: Task[] = [];
+
 
   constructor(private localStorageService: LocalStorageService) {
-    this.tasks = this.localStorageService.getTasks().map(task => ({ 
-      name: task, 
-      category: '',
-      urgent: false,
-      done: false 
-    }));
+    this.tasks = this.localStorageService.getTasks().map(name => ({ name, done: false, urgent: false, category: "" }));
+    this.urgentTasks = this.tasks.filter(task => task.urgent);
+    this.nonUrgentTasks = this.tasks.filter(task => !task.urgent);
   }
+
 
   ngOnInit(): void {
 
@@ -34,8 +35,5 @@ export class ListTasksComponent implements OnInit  {
     }
   }
 
-  deleteTask(task: Task) {
-    this.localStorageService.deleteTask(task);
-  }
 
 }
