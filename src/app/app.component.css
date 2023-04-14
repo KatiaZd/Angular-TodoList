@@ -19,9 +19,5 @@ body {
 }
 
 main {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    overflow-y: scroll;
     margin-left: 26px;
 }
