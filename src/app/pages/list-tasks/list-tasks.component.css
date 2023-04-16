@@ -1,5 +1,8 @@
+/* GENERAL */
+
 * {
     font-size: 16px;
+    
 }
 
 body {
@@ -12,12 +15,26 @@ body {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        height: 90vh;
-      
+        height: 90vh; 
+        
 }
 
-p {
-    font-size: 16px;
-    margin-bottom: 32px;
+
+/* DIV CONTAINER */
+
+.container {
+    display: -webkit-boxkit-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column ;
+                    flex-direction: column ;
+                    
+}
+
+h2 {
+    margin-bottom: 38px;
 }
 

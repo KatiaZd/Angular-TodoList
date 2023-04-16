@@ -11,6 +11,9 @@ import { HistoricalTasksComponent } from './pages/historical-tasks/historical-ta
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { FormsModule } from '@angular/forms';
 import { LocalStorageService } from './services/local-storage.service';
+import { Task } from './task.model';
+
+
 
 
 
@@ -24,18 +27,22 @@ import { LocalStorageService } from './services/local-storage.service';
     AddTasksComponent,
     HistoricalTasksComponent,
     CreateTaskComponent,
-    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+
   ],
   providers: [
-    LocalStorageService
+    LocalStorageService,
+
   ],
+  exports: [
+
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

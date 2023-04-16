@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { Task } from '../add-tasks/add-tasks.component';
+import { Task } from 'src/app/task.model';
+
 
 
 @Component({
@@ -14,10 +15,12 @@ export class ListTasksComponent implements OnInit  {
   tasks: Task[] = [];
   urgentTasks: Task[] = [];
   nonUrgentTasks: Task[] = [];
+  
 
 
-  constructor(private localStorageService: LocalStorageService) {
-    this.tasks = this.localStorageService.getTasks().map(name => ({ name, category: "", urgent: false, done: false }));
+  constructor(private localStorageService: LocalStorageService , private router: Router) {
+
+    this.tasks = this.localStorageService.getTasks().map(task => new Task(task.name, task.urgent, task.category, task.done));
     this.urgentTasks = this.tasks.filter(task => task.urgent);
     this.nonUrgentTasks = this.tasks.filter(task => !task.urgent);
   }
@@ -34,6 +37,5 @@ export class ListTasksComponent implements OnInit  {
       this.localStorageService.moveTaskToList(task);
     }
   }
-
 
 }
