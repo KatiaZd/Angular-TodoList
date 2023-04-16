@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { Task } from 'src/app/task.model';
 
@@ -28,8 +28,21 @@ export class ListTasksComponent implements OnInit  {
     task.done = true;
     this.localStorageService.saveTask(task);
     this.tasks = this.tasks.filter(t => t !== task);
-    this.localStorageService.saveTask(task);
+    this.sortTasks();
+  }
 
+  sortTasks() {
+    this.tasks.sort((a, b) => {
+      if (a.urgent && !b.urgent) {
+        return -1;
+      } else if (!a.urgent && b.urgent) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    this.urgentTasks = this.tasks.filter(task => task.urgent);
+    this.nonUrgentTasks = this.tasks.filter(task => !task.urgent);
   }
   
   
@@ -37,13 +50,8 @@ export class ListTasksComponent implements OnInit  {
 
   addTask(newTask: Task): void {
     this.localStorageService.saveTask(newTask);
-
-    if (newTask.urgent) {
-      this.urgentTasks.push(newTask);
-    } else {
-      this.nonUrgentTasks.push(newTask);
-    }
-
+    this.tasks.push(newTask);
+    this.sortTasks();
     this.newTask = { name: '', category: '', done: false, urgent: false };
   }
 }
