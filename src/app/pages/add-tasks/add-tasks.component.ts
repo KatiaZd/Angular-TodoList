@@ -14,9 +14,7 @@ export class AddTasksComponent {
   task: Task = new Task('', false, '', false);
 
   constructor(
-    private localStorageService: LocalStorageService,
-    private router: Router
-  ) {}
+    private localStorageService: LocalStorageService,private router: Router) {}
 
   saveTask() {
     const newTask: Task = new Task(
@@ -44,17 +42,21 @@ export class AddTasksComponent {
     if (taskForm.invalid) {
       return;
     }
-
+  
     if (this.newTask.urgent) {
       this.tasks.unshift(this.newTask);
     } else {
       this.tasks.push(this.newTask);
     }
-
-    this.localStorageService.saveTasks([this.newTask]);
+  
+    const tasks = [...this.localStorageService.getTasks(), this.newTask]; // Ajoute la nouvelle tâche à la liste existante
+    this.localStorageService.saveTasks(tasks);
     this.newTask = new Task('', false, '', false);
     taskForm.resetForm();
   }
+  
+
+  
 }
 
 
