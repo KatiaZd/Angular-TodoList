@@ -16,26 +16,34 @@ export class ListTasksComponent implements OnInit  {
   urgentTasks: Task[] = [];
   nonUrgentTasks: Task[] = [];
   
+  constructor(private localStorageService: LocalStorageService) { }
 
-
-  constructor(private localStorageService: LocalStorageService , private router: Router) {
-
-    this.tasks = this.localStorageService.getTasks().map(task => new Task(task.name, task.urgent, task.category, task.done));
+  ngOnInit(): void {
+    this.tasks = this.localStorageService.getTasks();
     this.urgentTasks = this.tasks.filter(task => task.urgent);
     this.nonUrgentTasks = this.tasks.filter(task => !task.urgent);
   }
 
-
-  ngOnInit(): void {
-
-  }
-
   moveToHistoricalTasks(task: Task) {
-    if (task.done) {
-      this.localStorageService.moveTaskToHistorical(task);
-    } else {
-      this.localStorageService.moveTaskToList(task);
-    }
-  }
+    task.done = true;
+    this.localStorageService.saveTask(task);
+    this.tasks = this.tasks.filter(t => t !== task);
+    this.localStorageService.saveTask(task);
 
+  }
+  
+  
+  newTask: Task = { name: '', category: '', done: false, urgent: false };
+
+  addTask(newTask: Task): void {
+    this.localStorageService.saveTask(newTask);
+
+    if (newTask.urgent) {
+      this.urgentTasks.push(newTask);
+    } else {
+      this.nonUrgentTasks.push(newTask);
+    }
+
+    this.newTask = { name: '', category: '', done: false, urgent: false };
+  }
 }

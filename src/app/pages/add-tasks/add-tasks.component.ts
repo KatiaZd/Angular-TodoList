@@ -24,7 +24,7 @@ export class AddTasksComponent {
       this.task.done
     );
 
-    this.localStorageService.saveTasks([newTask]);
+    this.localStorageService.saveTask(newTask);
     this.task = new Task('', false, '', false);
     this.router.navigate(['listTasks']);
   }
@@ -43,19 +43,17 @@ export class AddTasksComponent {
       return;
     }
   
+    this.newTask.category = this.selectedCategory;
+    this.tasks.push(this.newTask);
+    this.localStorageService.saveTask(this.tasks[0]);
+  
     if (this.newTask.urgent) {
-      this.tasks.unshift(this.newTask);
-    } else {
-      this.tasks.push(this.newTask);
+      this.localStorageService.saveUrgentTasks([this.newTask]);
     }
   
-    const tasks = [...this.localStorageService.getTasks(), this.newTask]; // Ajoute la nouvelle tâche à la liste existante
-    this.localStorageService.saveTasks(tasks);
     this.newTask = new Task('', false, '', false);
     taskForm.resetForm();
   }
-  
-
   
 }
 

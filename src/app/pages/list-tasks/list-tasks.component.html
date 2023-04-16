@@ -5,6 +5,7 @@
     </div>
 
     <div class="container">
+        <div *ngIf="urgentTasks.length > 0">
         <h2>⚠️ Tâches urgentes </h2>
         <ul *ngIf="urgentTasks.length > 0">
             <li *ngFor="let task of urgentTasks">
@@ -14,7 +15,9 @@
                 </ng-container>
             </li>
         </ul>
+    </div>
     
+    <div *ngIf="nonUrgentTasks.length > 0">
         <h2>🌸 Tâches non urgentes</h2>
         <ul *ngIf="nonUrgentTasks.length > 0">
             <li *ngFor="let task of nonUrgentTasks">
@@ -24,6 +27,8 @@
                 </ng-container>
             </li>
         </ul>
+    </div>
+    
     </div>
 </body>
 
